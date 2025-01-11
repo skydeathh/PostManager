@@ -1,0 +1,7 @@
+.MainButton {
+    border: 1px solid teal;
+    background-color: transparent;
+    color:Teal;
+    padding: 5px  15px;
+    margin: 5px;
+}
