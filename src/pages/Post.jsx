@@ -39,7 +39,7 @@ const Post = () => {
             <h1 style={{margin: '15px 15px', justifyContent: 'center', display: 'flex'}}>Комментарии</h1>
                     { isCommentsLoading
                     ? <div style={{ display: 'flex', justifyContent: 'center' }}><Loader /></div>
-                    : comments.map((c, index) => <CommentItem comment={c}/>
+                    : comments.map((c, index) => <CommentItem key={index} comment={c}/>
                     )}
         </div>
     )

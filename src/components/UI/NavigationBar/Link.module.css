@@ -1,0 +1,9 @@
+.NavigationLink {
+    border: 1px solid teal;
+    background-color: transparent;
+    color: teal;
+    padding: 5px 15px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+}
