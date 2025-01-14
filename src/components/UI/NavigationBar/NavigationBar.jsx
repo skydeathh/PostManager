@@ -1,11 +1,18 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import MainButton from '../button/MainButton';
 import { AuthContext } from '../../../context/context';
 import classes from './Link.module.css'
 
 const NavigationBar = () => {
-    const { isAuth, setIsAuth } = useContext(AuthContext);
+    const { isAuth, setIsAuth } = useContext(AuthContext); 
+    const navigate = useNavigate();
+
+    const logout = () => {
+        setIsAuth(false);
+        localStorage.removeItem('auth');
+        navigate('/login');
+    };
 
     return (
         <div className='navigation__bar'>
@@ -17,7 +24,7 @@ const NavigationBar = () => {
                     Посты
                 </Link>
             </div>
-            <MainButton style={{ marginLeft: 'auto' }} onClick={() => setIsAuth(false)}>
+            <MainButton style={{ marginLeft: 'auto' }} onClick={logout}>
                 Выход
             </MainButton>
         </div>

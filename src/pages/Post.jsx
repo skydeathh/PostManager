@@ -24,7 +24,7 @@ const Post = () => {
     useEffect(() => {
         fetchPostBtId();
         fetchCommentsByPostId();
-    });
+    }, []);
 
     return (
         <div>

@@ -2,14 +2,17 @@ import React, {useContext} from 'react';
 import MainInput from "../components/UI/input/MainInput";
 import MainButton from "../components/UI/button/MainButton";
 import {AuthContext} from "../context/context";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const {isAuth, setIsAuth} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const login = event => {
         event.preventDefault();
         setIsAuth(true);
         localStorage.setItem('auth', 'true');
+        navigate('/posts');
     }
 
     return (
